@@ -1,6 +1,6 @@
 class MoosController < ApplicationController
   before_action :set_moo, only: [:show, :edit, :update, :destroy]
-
+  before_action :redirect_if_not_signed_in, only: [:new, :edit, :create]
   # GET /moos
   # GET /moos.json
   def index
@@ -24,8 +24,8 @@ class MoosController < ApplicationController
   # POST /moos
   # POST /moos.json
   def create
-    @moo = Moo.new(moo_params)
-
+    @moo = @current_user.posts.new(moo_params)
+    raise 'hell'
     respond_to do |format|
       if @moo.save
         format.html { redirect_to @moo, notice: 'Moo was successfully created.' }

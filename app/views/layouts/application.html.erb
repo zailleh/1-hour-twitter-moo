@@ -10,6 +10,21 @@
   </head>
 
   <body>
-    <%= yield %>
+    <head>
+      <p>Welcome to @Moo</p>
+      <nav>
+        <% if @current_user.present? %>
+          <%= link_to 'My Profile', user_path(@current_user.id) %>
+          <%= link_to 'Logout', logout_path %>
+        <% else %>
+          <%= link_to 'Login', login_path %>
+          <%= link_to 'Sign Up', new_user_path %>
+        <% end %>
+        
+      </nav>
+    </head>
+    <main>
+      <%= yield %>
+    </main>
   </body>
 </html>

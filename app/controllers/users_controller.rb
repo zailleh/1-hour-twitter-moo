@@ -61,6 +61,27 @@ class UsersController < ApplicationController
     end
   end
 
+  def login
+    # will render login form
+  end
+
+  def start_session
+    user = User.find_by username: params[:username]
+    if user.present? && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to root_path
+    else
+      @msg = 'Incorrect username or password'
+      render :login
+    end
+  end
+
+  def logout
+    session[:user_id] = nil
+    redirect_to root_path
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user
@@ -69,6 +90,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:username, :email, :password_digest)
+      params.require(:user).permit(:username, :email, :password, :password_confirmation)
     end
 end
