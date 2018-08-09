@@ -2,26 +2,8 @@
 
 <h1>Moos</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Content</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @moos.each do |moo| %>
-      <tr>
-        <td><%= moo.content %></td>
-        <td><%= link_to 'Show', moo %></td>
-        <td><%= link_to 'Edit', edit_moo_path(moo) %></td>
-        <td><%= link_to 'Destroy', moo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+<% @moos.each do |moo| %>
+  <%= render 'moo', m: moo %>
+<% end %>
 
 <%= link_to 'New Moo', new_moo_path %>

@@ -6,10 +6,14 @@
 #  content    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  owner_id   :bigint(8)
+#  user_id    :bigint(8)
+#  moo_id     :bigint(8)
+#  is_reply   :boolean
 #
 
 class Moo < ApplicationRecord
-  has_and_belongs_to_many :users, :join_table => :likes
+  has_and_belongs_to_many :likers, :join_table => :likes, class_name: 'User'
   belongs_to :owner, :class_name => 'User', :foreign_key => "user_id"
+  belongs_to :reply_to, :class_name => 'Moo', :foreign_key => "moo_id", optional: true
+  has_many :replies, :class_name => 'Moo', :foreign_key => "moo_id"
 end

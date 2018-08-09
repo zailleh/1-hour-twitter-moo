@@ -1,6 +1,6 @@
 class MoosController < ApplicationController
-  before_action :set_moo, only: [:show, :edit, :update, :destroy]
-  before_action :redirect_if_not_signed_in, only: [:new, :edit, :create]
+  before_action :set_moo, only: [:show, :edit, :update, :destroy, :like]
+  before_action :redirect_if_not_signed_in, only: [:new, :edit, :create, :like]
   # GET /moos
   # GET /moos.json
   def index
@@ -17,15 +17,30 @@ class MoosController < ApplicationController
     @moo = Moo.new
   end
 
+  def reply
+    @moo = Moo.new
+    @moo.is_reply = true
+    @moo.moo_id = params[:id]
+    render action: :new
+  end
   # GET /moos/1/edit
   def edit
+  end
+
+  # POST /moos/1/like
+  def like
+    if @moo.likers.include? @current_user
+      @moo.likers.delete @current_user
+    else
+      @moo.likers << @current_user
+    end
+    redirect_to request.referrer
   end
 
   # POST /moos
   # POST /moos.json
   def create
     @moo = @current_user.posts.new(moo_params)
-    raise 'hell'
     respond_to do |format|
       if @moo.save
         format.html { redirect_to @moo, notice: 'Moo was successfully created.' }
@@ -69,6 +84,6 @@ class MoosController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def moo_params
-      params.require(:moo).permit(:content)
+      params.require(:moo).permit(:content, :moo_id, :is_reply)
     end
 end

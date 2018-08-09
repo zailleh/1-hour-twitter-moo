@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
 
   private
     def check_login
-      @current_user = User.find(session[:user_id]) if is_logged_in
+      @current_user = User.find_by(:id => session[:user_id]) if is_logged_in
     end
 
     def is_logged_in

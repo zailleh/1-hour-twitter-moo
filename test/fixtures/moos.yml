@@ -6,7 +6,9 @@
 #  content    :text
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
-#  owner_id   :bigint(8)
+#  user_id    :bigint(8)
+#  moo_id     :bigint(8)
+#  is_reply   :boolean
 #
 
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html

@@ -1,0 +1,9 @@
+<div class="moo">
+  <p>
+    <%= m.content %>
+  </p>
+  <div class="moo-options">
+    <%= link_to "Reply (#{m.replies.count})", reply_path(m) %>
+    <%= link_to "Like (#{m.likers.count})", like_path(m), method: :post %>
+  </div>
+</div>

@@ -16,6 +16,10 @@
     <%= form.text_area :content %>
   </div>
 
+  <% if moo.is_reply %>
+    <%= form.hidden_field :moo_id %>
+  <% end %>
+
   <div class="actions">
     <%= form.submit %>
   </div>

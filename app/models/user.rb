@@ -13,6 +13,6 @@
 class User < ApplicationRecord
   validates :username, :email, :uniqueness => true;
   has_secure_password
-  has_and_belongs_to_many :moos, :join_table => :likes
+  has_and_belongs_to_many :likes, :join_table => :likes, class_name: "Moo"
   has_many :posts, dependent: :destroy, class_name: "Moo"
 end
