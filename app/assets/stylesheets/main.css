@@ -1,0 +1,29 @@
+body {
+  background-color: white;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 960px;
+  min-width: 320px;
+  margin: 0 auto;
+}
+
+header {
+  background-color: bisque;
+  padding: .5em;
+  display: flex;
+  flex-direction: row;
+}
+
+nav {
+  margin-left: auto;
+}
+
+main {
+  padding: 1em;
+  box-shadow: 0 0 .5em rgba(0,0,0,0.5);
+  min-height: 100vh
+}
