@@ -18,6 +18,7 @@ https://blooming-coast-98044.herokuapp.com/
 | time spent | commit          | description |
 |------------|---------------- |-------------|
 | 1 hour     | [309115e2fd][1] | Basic app working, sign-ins and sign-ups, can post and reply to and like posts. Styling is crap.
+| 1 hour     | [89c499b7ad][2] | Add more css and layout
 
 
 
@@ -27,3 +28,4 @@ https://blooming-coast-98044.herokuapp.com/
 
 
 [1]: https://github.com/zailleh/1-hour-twitter-moo/tree/309115e2fd1222359863777b64e4a67983cc2d2e
+[2]: https://github.com/zailleh/1-hour-twitter-moo/tree/89c499b7ad21f5076534b35807b6e42a716b4476
