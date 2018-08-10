@@ -1,0 +1,48 @@
+
+
+.moo-moo {
+  background-color: white;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.25em rgba(0,0,0,0.25);
+}
+
+.moo-moo textarea {
+  border-color: lightgrey;
+  font-size: 1em;
+  padding: 0.5em;
+  width: 30em;
+  height: 6em;
+  display: block;
+  resize:none;
+  border-radius: 1em;
+}
+.moo-moo .actions {
+  margin-top: 0.5em;
+  display: flex;
+  flex-direction: row;
+}
+
+.moo-moo label {
+  display: inline-block;
+  margin: 1em;
+}
+
+.moo-moo input[type="submit"] {
+  background-color: var(--moo-brown);
+  font-size: 1em;
+  color: white;
+  border: 0;
+  margin-left: auto;
+  padding: .75em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0.25em rgba(0,0,0,0.25);
+}
+
+.moo-moo input[type="submit"]:hover {
+  background-color: var(--moo-brown-dark);
+  cursor: pointer;
+}

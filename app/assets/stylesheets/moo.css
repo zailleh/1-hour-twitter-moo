@@ -1,0 +1,36 @@
+.moo {
+  background-color: white;
+  border-radius: 0.5em;
+  padding: 1em;
+  margin-bottom: 1em;
+  box-shadow: 0 0 0.25em rgba(0,0,0,0.25)
+}
+
+.moo > .moo-options {
+  margin-top: 0.5em;
+  padding-top: 0.5em;
+  border-top: 1px solid lightgrey;
+}
+
+.moo .moo-header {
+  margin: 0;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+.moo .content {
+  margin: 0;
+  box-sizing: border-box;
+  border-left: 3px solid lightgrey;
+  padding: 0.5em;
+}
+
+.moo .username {
+  font-weight: bolder;
+}
+
+.moo .date {
+  font-size: .75em;
+  color: grey;
+}

@@ -1,4 +1,4 @@
-<%= form_with(model: moo, local: true) do |form| %>
+<%= form_with(model: moo, local: true, class: 'moo-moo') do |form| %>
   <% if moo.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(moo.errors.count, "error") %> prohibited this moo from being saved:</h2>
@@ -12,7 +12,7 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :content %>
+    <%= form.label :content, "Compose a new Moo" %>
     <%= form.text_area :content %>
   </div>
 

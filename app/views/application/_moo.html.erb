@@ -1,5 +1,13 @@
 <div class="moo">
-  <p>
+  <div class="moo-header">
+    <span class="username">
+      @<%= m.owner.username %>
+    </span>
+    <span class="date">
+      <%= m.created_at.strftime("%e-%b") %>
+    </span>
+  </div>
+  <p class="content">
     <%= m.content %>
   </p>
   <div class="moo-options">
